@@ -291,7 +291,7 @@ export default function ProfitPlannerPage() {
                       <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(val) => `${val/1000}K`} />
                       <Tooltip 
                         contentStyle={{ backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px' }}
-                        formatter={(value: number) => [`₹ ${value.toLocaleString()}`, 'Profit']}
+                        formatter={(value: any) => [`₹ ${Number(value || 0).toLocaleString()}`, 'Profit']}
                         labelFormatter={(label) => `Yield: ${label} Q/acre`}
                       />
                       <Line type="monotone" dataKey="profit" stroke="hsl(var(--primary))" strokeWidth={3} dot={{ fill: "hsl(var(--primary))", strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
